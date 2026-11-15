@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Igor Matijević · Video, montaža, film</title>
+<meta name="description" content="Igor Matijević – video produkcija, montaža in kratki filmi v Ljubljani. Video production, editing and short films, Ljubljana.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#111110;--bg2:#1a1917;--fg:#f2efe9;--mute:#a19c92;--line:#2c2a27;--acc:#e8a33d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font:17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:rgba(17,17,16,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none;white-space:nowrap}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;color:var(--mute);font-size:15px}
+nav a:hover{color:var(--fg)}
+.lang{border:1px solid var(--line);border-radius:999px;display:flex;overflow:hidden}
+.lang button{background:none;border:0;color:var(--mute);font:600 13px Inter;padding:6px 11px;cursor:pointer}
+.lang button.on{background:var(--fg);color:var(--bg)}
+.hero{padding-top:96px;padding-bottom:72px}
+.eyebrow{color:var(--acc);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,7vw,80px);line-height:1.04;margin:14px 0 22px;letter-spacing:-.01em}
+.lead{font-size:20px;color:var(--mute);max-width:620px}
+.cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px}
+.btn.p{background:var(--acc);color:#1a1205}
+.btn.s{border:1px solid var(--line)}
+.feature{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;margin-top:56px}
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:10px}
+.sub{color:var(--mute);margin-bottom:36px;max-width:620px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
+.card .vid{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000;cursor:pointer}
+.vid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,opacity .3s;opacity:.88}
+.vid:hover img{transform:scale(1.03);opacity:1}
+.vid .play{position:absolute;inset:0;display:grid;place-items:center}
+.vid .play span{width:62px;height:62px;border-radius:50%;background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.8);display:grid;place-items:center}
+.vid .play span:after{content:"";border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.card h3{font-size:18px;font-weight:600;margin:14px 0 4px}
+.card p{color:var(--mute);font-size:15px}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--acc);text-transform:uppercase;letter-spacing:.06em}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.svc div{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:26px}
+.svc h3{font-family:Fraunces,serif;font-weight:600;font-size:22px;margin-bottom:8px}
+.svc p{color:var(--mute);font-size:15px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about p{color:var(--mute);margin-bottom:14px}
+.about ul{list-style:none}
+.about li{padding:12px 0;border-bottom:1px solid var(--line)}
+.contact{text-align:center}
+.contact h2{font-size:clamp(34px,5vw,56px)}
+.contact .big{display:block;font-family:Fraunces,serif;font-size:clamp(22px,4vw,36px);text-decoration:none;margin:10px 0}
+.contact .big:hover{color:var(--acc)}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+[data-en]{display:none}
+html[lang=en] [data-sl]{display:none}
+html[lang=en] [data-en]{display:revert}
+@media (max-width:760px){
+  nav a{display:none}
+  .hero{padding-top:56px;padding-bottom:40px}
+  .about{grid-template-columns:1fr;gap:20px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">Igor Matijević</a>
+  <nav>
+    <a href="#work"><span data-sl>Projekti</span><span data-en>Work</span></a>
+    <a href="#services"><span data-sl>Storitve</span><span data-en>Services</span></a>
+    <a href="#about"><span data-sl>O meni</span><span data-en>About</span></a>
+    <a href="#contact"><span data-sl>Kontakt</span><span data-en>Contact</span></a>
+    <div class="lang"><button data-l="sl">SL</button><button data-l="en">EN</button></div>
+  </nav>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <div class="eyebrow"><span data-sl>Video · montaža · film · Ljubljana</span><span data-en>Video · editing · film · Ljubljana</span></div>
+  <h1><span data-sl>Zgodbe, posnete<br>in zmontirane z občutkom.</span><span data-en>Stories, shot<br>and cut with care.</span></h1>
+  <p class="lead"><span data-sl>Snemam, montiram in ozvočim video za umetnike, kulturne ustanove, podjetja in fotografe — od portreta umetnika do kratkega filma.</span><span data-en>I shoot, edit and score video for artists, cultural institutions, businesses and photographers — from artist portraits to short films.</span></p>
+  <div class="cta">
+    <a class="btn p" href="#contact"><span data-sl>Pošljite povpraševanje</span><span data-en>Get in touch</span></a>
+    <a class="btn s" href="#work"><span data-sl>Poglejte projekte</span><span data-en>See the work</span></a>
+  </div>
+  <div class="feature vid" data-id="cUYOiwYadvQ"></div>
+</div>
+
+<section id="work"><div class="wrap">
+  <h2><span data-sl>Izbrani projekti</span><span data-en>Selected work</span></h2>
+  <p class="sub"><span data-sl>Portreti umetnikov, dokumentarni in turistični filmi, kratki igrani filmi.</span><span data-en>Artist portraits, documentary and travel films, short fiction.</span></p>
+  <div class="grid">
+    <div class="card"><div class="vid" data-id="cUYOiwYadvQ"></div><span class="tag"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3>Alenka Sottler · IBBY 2026</h3><p><span data-sl>Film o ilustratorki Alenki Sottler za IBBY 2026.</span><span data-en>A film on illustrator Alenka Sottler for IBBY 2026.</span></p></div>
+    <div class="card"><div class="vid" data-id="S5imX1U618c"></div><span class="tag"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3>Studio Tour with Alenka Sottler</h3><p><span data-sl>Sprehod po ateljeju.</span><span data-en>A walk through the artist's studio.</span></p></div>
+    <div class="card"><div class="vid" data-id="T2biNFOkhRQ"></div><span class="tag"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3>Alenka Sottler – Illustrator of the Original Bambi</h3><p><span data-sl>Kratki portret, 1.400+ ogledov.</span><span data-en>Short portrait, 1,400+ views.</span></p></div>
+    <div class="card"><div class="vid" data-id="pCAexVz2f6I"></div><span class="tag"><span data-sl>Turistični film</span><span data-en>Travel film</span></span><h3>Hidden Treasures of Northern Istria</h3><p><span data-sl>Dokumentarni film o severni Istri.</span><span data-en>A documentary on northern Istria.</span></p></div>
+    <div class="card"><div class="vid" data-id="UkIZuH9oOqo"></div><span class="tag"><span data-sl>Promocijski film</span><span data-en>Promo film</span></span><h3>Istria Healthy Lifestyles</h3><p><span data-sl>Promocijski film za regijo.</span><span data-en>A promotional film for the region.</span></p></div>
+    <div class="card"><div class="vid" data-id="maEDvfX6c0M"></div><span class="tag"><span data-sl>Kulinarični video</span><span data-en>Food video</span></span><h3>Apfel Pastete · 1920</h3><p><span data-sl>Družinski recept, posnet z babico.</span><span data-en>A family recipe, filmed with my grandmother.</span></p></div>
+    <div class="card"><div class="vid" data-id="a1gP6Kw1OWs"></div><span class="tag"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3>Chit Chat</h3><p><span data-sl>Kratki igrani film.</span><span data-en>Short fiction film.</span></p></div>
+    <div class="card"><div class="vid" data-id="k13na9H8UmI"></div><span class="tag"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3>Day by Day</h3><p><span data-sl>Kratki igrani film.</span><span data-en>Short fiction film.</span></p></div>
+    <div class="card"><div class="vid" data-id="6SYSOx91cC8"></div><span class="tag"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3>3 : 1</h3><p><span data-sl>Kratki film.</span><span data-en>Short film.</span></p></div>
+  </div>
+</div></section>
+
+<section id="services"><div class="wrap">
+  <h2><span data-sl>Storitve</span><span data-en>Services</span></h2>
+  <p class="sub"><span data-sl>En človek od ideje do končnega videa — hitro, osebno in brez agencijskih stroškov.</span><span data-en>One person from idea to final cut — quick, personal, without agency overheads.</span></p>
+  <div class="svc">
+    <div><h3><span data-sl>Video portreti</span><span data-en>Video portraits</span></h3><p><span data-sl>Umetniki, obrtniki, podjetniki — kdo ste in kaj delate, v 1–3 minutah.</span><span data-en>Artists, makers, founders — who you are and what you do, in 1–3 minutes.</span></p></div>
+    <div><h3><span data-sl>Dogodki in kultura</span><span data-en>Events &amp; culture</span></h3><p><span data-sl>Razstave, festivali, predstavitve — posnetek dogodka in kratek povzetek za splet.</span><span data-en>Exhibitions, festivals, launches — event coverage and a short recap for the web.</span></p></div>
+    <div><h3><span data-sl>Montaža in glasba</span><span data-en>Editing &amp; music</span></h3><p><span data-sl>Montaža vašega materiala, barvna korekcija, zvok in originalna glasba.</span><span data-en>Editing your footage, colour, sound and original music.</span></p></div>
+    <div><h3><span data-sl>Za fotografe</span><span data-en>For photographers</span></h3><p><span data-sl>Video dodatek k vašim fotografijam — poroke, portreti, zakulisje.</span><span data-en>A video add-on to your photo shoots — weddings, portraits, behind the scenes.</span></p></div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap about">
+  <div>
+    <h2><span data-sl>O meni</span><span data-en>About</span></h2>
+    <p><span data-sl>Sem Igor Matijević, univerzitetni diplomirani arhitekt iz Ljubljane. Arhitektura me je naučila kompozicije in svetlobe; zadnja leta jo uporabljam za kamero.</span><span data-en>I'm Igor Matijević, a graduate architect from Ljubljana. Architecture taught me composition and light; these days I use them behind the camera.</span></p>
+    <p><span data-sl>Delam kot snemalec in montažer, prevajam filme in serije za HBO ter sodelujem pri filmskih produkcijah.</span><span data-en>I work as a camera operator and editor, translate films and series for HBO, and work on film productions.</span></p>
+  </div>
+  <ul>
+    <li><span data-sl>Film o Alenki Sottler za IBBY 2026</span><span data-en>Film on Alenka Sottler for IBBY 2026</span></li>
+    <li><span data-sl>Montaža in glasba za film BIG SEE</span><span data-en>Editing and music for a BIG SEE film</span></li>
+    <li><span data-sl>Casting za serijo »Korporacija« — več kot 100 statistov</span><span data-en>Casting for the series “Korporacija” — over 100 extras</span></li>
+    <li><span data-sl>Podnaslavljanje filmov in serij za HBO</span><span data-en>Subtitling films and series for HBO</span></li>
+    <li><span data-sl>Jeziki: slovenščina, angleščina, hrvaščina, nemščina</span><span data-en>Languages: Slovene, English, Croatian, German</span></li>
+  </ul>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2><span data-sl>Imate zgodbo?</span><span data-en>Got a story?</span></h2>
+  <p class="sub" style="margin:0 auto 20px"><span data-sl>Pišite ali pokličite — odgovorim v enem dnevu.</span><span data-en>Write or call — I reply within a day.</span></p>
+  <a class="big" href="mailto:info@igormatijevic.com">info@igormatijevic.com</a>
+  <a class="big" href="tel:+38641514007">041 514 007</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Igor Matijević · Ljubljana</span>
+  <a href="https://www.youtube.com/@IgorMatijevic" target="_blank" rel="noopener">YouTube</a>
+</div></footer>
+
+<script>
+document.querySelectorAll('.vid').forEach(v=>{
+  const id=v.dataset.id;
+  v.innerHTML='<img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg"><div class="play"><span></span></div>';
+  v.addEventListener('click',()=>{v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>'},{once:true});
+});
+function setLang(l){
+  document.documentElement.lang=l;
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+  document.title=l==='en'?'Igor Matijević · Video, editing, film':'Igor Matijević · Video, montaža, film';
+  try{localStorage.setItem('lang',l)}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+let l='sl';try{l=localStorage.getItem('lang')||((navigator.language||'').startsWith('sl')?'sl':'en')}catch(e){}
+setLang(l);
+</script>
+</body>
+</html>

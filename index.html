@@ -24,7 +24,7 @@ nav a:hover{color:var(--fg)}
 .lang{border:1px solid var(--line);border-radius:999px;display:flex;overflow:hidden}
 .lang button{background:none;border:0;color:var(--mute);font:600 13px Inter;padding:6px 11px;cursor:pointer}
 .lang button.on{background:var(--fg);color:var(--bg)}
-.hero{padding-top:96px;padding-bottom:72px}
+.hero{padding-top:56px;padding-bottom:72px}
 .eyebrow{color:var(--acc);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,7vw,80px);line-height:1.04;margin:14px 0 22px;letter-spacing:-.01em}
 .lead{font-size:20px;color:var(--mute);max-width:620px}
@@ -33,6 +33,9 @@ h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,7vw,80px);lin
 .btn.p{background:var(--acc);color:#1a1205}
 .btn.s{border:1px solid var(--line)}
 .feature{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;margin-top:56px}
+.reel{position:relative;width:100%;aspect-ratio:21/9;overflow:hidden;background:#000}
+.reel iframe{position:absolute;top:50%;left:50%;width:100%;aspect-ratio:16/9;height:auto;transform:translate(-50%,-50%) scale(1.12);pointer-events:none;border:0}
+.reel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,16,0) 60%,var(--bg))}
 section{padding:72px 0;border-top:1px solid var(--line)}
 h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:10px}
 .sub{color:var(--mute);margin-bottom:36px;max-width:620px}
@@ -66,7 +69,7 @@ html[lang=en] [data-sl]{display:none}
 html[lang=en] [data-en]{display:revert}
 @media (max-width:760px){
   nav a{display:none}
-  .hero{padding-top:56px;padding-bottom:40px}
+  .hero{padding-top:32px;padding-bottom:40px}
   .about{grid-template-columns:1fr;gap:20px}
   section{padding:56px 0}
 }
@@ -85,6 +88,7 @@ html[lang=en] [data-en]{display:revert}
 </div></header>
 
 <main id="top">
+<div class="reel" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/1mVct9-HUAA?autoplay=1&mute=1&loop=1&playlist=1mVct9-HUAA&controls=0&playsinline=1&rel=0&disablekb=1&iv_load_policy=3&start=11" allow="autoplay; encrypted-media" tabindex="-1" title="Showreel"></iframe></div>
 <div class="wrap hero">
   <div class="eyebrow"><span data-sl>Video · montaža · film · Ljubljana</span><span data-en>Video · editing · film · Ljubljana</span></div>
   <h1><span data-sl>Zgodbe, posnete<br>in zmontirane z občutkom.</span><span data-en>Stories, shot<br>and cut with care.</span></h1>
@@ -93,7 +97,6 @@ html[lang=en] [data-en]{display:revert}
     <a class="btn p" href="#contact"><span data-sl>Pošljite povpraševanje</span><span data-en>Get in touch</span></a>
     <a class="btn s" href="#work"><span data-sl>Poglejte projekte</span><span data-en>See the work</span></a>
   </div>
-  <div class="feature vid" data-id="cUYOiwYadvQ"></div>
 </div>
 
 <section id="work"><div class="wrap">

@@ -7,71 +7,109 @@
 <meta name="description" content="Igor Matijević – video produkcija, montaža in kratki filmi v Ljubljani. Video production, editing and short films, Ljubljana.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Jost:wght@300;400;500&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#111110;--bg2:#1a1917;--fg:#f2efe9;--mute:#a19c92;--line:#2c2a27;--acc:#e8a33d}
+:root{--bg:#fff;--fg:#111;--mute:#6b6b6b;--line:#e6e6e6;--acc:#e8622a;--ink:#0d0d0d}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--fg);font:17px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:5;background:rgba(17,17,16,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
-.logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none;white-space:nowrap}
-nav{display:flex;gap:22px;align-items:center}
-nav a{text-decoration:none;color:var(--mute);font-size:15px}
-nav a:hover{color:var(--fg)}
-.lang{border:1px solid var(--line);border-radius:999px;display:flex;overflow:hidden}
-.lang button{background:none;border:0;color:var(--mute);font:600 13px Inter;padding:6px 11px;cursor:pointer}
-.lang button.on{background:var(--fg);color:var(--bg)}
-.hero{padding-top:56px;padding-bottom:72px}
-.eyebrow{color:var(--acc);font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,7vw,80px);line-height:1.04;margin:14px 0 22px;letter-spacing:-.01em}
-.lead{font-size:20px;color:var(--mute);max-width:620px}
-.cta{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
-.btn{display:inline-block;padding:13px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:16px}
-.btn.p{background:var(--acc);color:#1a1205}
-.btn.s{border:1px solid var(--line)}
-.feature{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;margin-top:56px}
-.reel{position:relative;width:100%;aspect-ratio:21/9;overflow:hidden;background:#000}
-.reel iframe{position:absolute;top:50%;left:50%;width:100%;aspect-ratio:16/9;height:auto;transform:translate(-50%,-50%) scale(1.12);pointer-events:none;border:0}
-.reel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,16,0) 60%,var(--bg))}
-section{padding:72px 0;border-top:1px solid var(--line)}
-h2{font-family:Fraunces,serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:10px}
-.sub{color:var(--mute);margin-bottom:36px;max-width:620px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:28px}
-.card .vid{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000;cursor:pointer}
-.vid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s,opacity .3s;opacity:.88}
-.vid:hover img{transform:scale(1.03);opacity:1}
-.vid .play{position:absolute;inset:0;display:grid;place-items:center}
-.vid .play span{width:62px;height:62px;border-radius:50%;background:rgba(0,0,0,.55);border:1.5px solid rgba(255,255,255,.8);display:grid;place-items:center}
-.vid .play span:after{content:"";border-left:18px solid #fff;border-top:11px solid transparent;border-bottom:11px solid transparent;margin-left:5px}
-.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.card h3{font-size:18px;font-weight:600;margin:14px 0 4px}
-.card p{color:var(--mute);font-size:15px}
-.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--acc);text-transform:uppercase;letter-spacing:.06em}
-.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.svc div{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:26px}
-.svc h3{font-family:Fraunces,serif;font-weight:600;font-size:22px;margin-bottom:8px}
-.svc p{color:var(--mute);font-size:15px}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-.about p{color:var(--mute);margin-bottom:14px}
+body{background:var(--bg);color:var(--fg);font:300 18px/1.65 Jost,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.cond{font-family:Oswald,sans-serif;text-transform:uppercase;font-weight:400;letter-spacing:-.01em;line-height:.98}
+.label{font:500 12px/1.4 Jost,sans-serif;text-transform:uppercase;letter-spacing:.22em}
+.serif{font-family:"Libre Baskerville",Georgia,serif;font-style:italic;font-weight:400}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{font:400 15px Jost,sans-serif;text-transform:uppercase;letter-spacing:.32em;white-space:nowrap}
+nav{display:flex;gap:30px;align-items:center}
+nav a{font:400 12px Jost,sans-serif;text-transform:uppercase;letter-spacing:.2em;color:#333}
+nav a:hover{color:var(--acc)}
+.lang{display:flex;gap:2px}
+.lang button{background:none;border:0;font:500 12px Jost,sans-serif;letter-spacing:.15em;color:#aaa;padding:6px 6px;cursor:pointer}
+.lang button.on{color:var(--fg);text-decoration:underline;text-underline-offset:5px}
+
+/* hero reel */
+.reel{position:relative;width:100%}
+.reel-media{position:relative;width:100%;aspect-ratio:2.35/1;overflow:hidden;background:#000}
+.reel-media iframe{position:absolute;top:50%;left:50%;width:100%;aspect-ratio:16/9;height:auto;transform:translate(-50%,-50%) scale(1.12);pointer-events:none;border:0}
+.reel-box{position:absolute;left:clamp(24px,calc((100vw - 1240px)/2 + 24px),9999px);bottom:clamp(20px,4vw,56px);z-index:2;background:var(--ink);color:#fff;padding:18px 26px 22px;max-width:min(640px,calc(100% - 48px))}
+.reel-box .label{color:var(--acc);display:block;margin-bottom:10px}
+.reel-box h1{font-size:clamp(34px,4.6vw,66px)}
+.intro{padding-top:64px;padding-bottom:40px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:end}
+.intro p{font-size:21px;color:#333;max-width:560px}
+.intro .serif{font-size:clamp(22px,2.4vw,30px);line-height:1.4;color:var(--fg)}
+.btns{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;border:1px solid var(--fg);padding:14px 26px;font:500 12px Jost,sans-serif;text-transform:uppercase;letter-spacing:.22em}
+.btn.dark{background:var(--fg);color:#fff}
+.btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+
+/* sections */
+section{padding:88px 0 40px}
+.head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-top:1px solid var(--fg);padding-top:18px;margin-bottom:40px}
+.head h2{font-size:clamp(40px,6vw,84px)}
+.head .label{color:var(--mute)}
+
+/* work tiles */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.tile{position:relative;aspect-ratio:16/10;overflow:hidden;background:#000;cursor:pointer;color:#fff}
+.tile.wide{grid-column:span 2;aspect-ratio:2.35/1}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease,opacity .4s;opacity:.86}
+.tile:hover img{transform:scale(1.04);opacity:.7}
+.tile .cap{position:absolute;left:0;bottom:0;right:0;padding:24px 26px;background:linear-gradient(0deg,rgba(0,0,0,.6),rgba(0,0,0,0));}
+.tile .cap .label{color:#fff;opacity:.85;display:block;margin-bottom:8px}
+.tile .cap h3{font-size:clamp(26px,3.2vw,46px)}
+.tile .cap p{font-size:15px;opacity:.85;margin-top:8px;max-width:520px}
+.tile .play{position:absolute;top:22px;right:22px;font:500 11px Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;border:1px solid rgba(255,255,255,.8);padding:8px 14px}
+.tile iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.svc div{padding:26px 26px 30px 0;border-right:1px solid var(--line);margin-right:26px}
+.svc div:last-child{border-right:0;margin-right:0}
+.svc .num{font:300 14px Oswald,sans-serif;color:var(--acc);letter-spacing:.1em}
+.svc h3{font-size:28px;margin:12px 0 12px}
+.svc p{font-size:16px;color:#444}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.about .serif{font-size:clamp(24px,2.6vw,34px);line-height:1.38;margin-bottom:26px}
+.about p{color:#333;margin-bottom:16px}
 .about ul{list-style:none}
-.about li{padding:12px 0;border-bottom:1px solid var(--line)}
-.contact{text-align:center}
-.contact h2{font-size:clamp(34px,5vw,56px)}
-.contact .big{display:block;font-family:Fraunces,serif;font-size:clamp(22px,4vw,36px);text-decoration:none;margin:10px 0}
-.contact .big:hover{color:var(--acc)}
-footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mute);font-size:14px}
+.about li{padding:16px 0;border-bottom:1px solid var(--line);font-size:16px;color:#333}
+.about li b{display:block;font:500 11px Jost,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:4px}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;padding:110px 0;margin-top:80px}
+.contact .label{color:var(--acc)}
+.contact h2{font-size:clamp(48px,9vw,140px);margin:18px 0 34px}
+.contact a.big{display:block;font:300 clamp(24px,3.6vw,48px)/1.3 Oswald,sans-serif;letter-spacing:.02em}
+.contact a.big:hover{color:var(--acc)}
+footer{background:var(--ink);color:#888;border-top:1px solid #2a2a2a;padding:26px 0}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer a:hover{color:#fff}
+
 [data-en]{display:none}
 html[lang=en] [data-sl]{display:none}
 html[lang=en] [data-en]{display:revert}
+
+@media (max-width:900px){
+  .intro,.about{grid-template-columns:1fr;gap:28px}
+  .svc{grid-template-columns:1fr 1fr}
+  .svc div{border-right:0;margin-right:0;border-bottom:1px solid var(--line)}
+}
 @media (max-width:760px){
   nav a{display:none}
-  .hero{padding-top:32px;padding-bottom:40px}
-  .about{grid-template-columns:1fr;gap:20px}
-  section{padding:56px 0}
+  .logo{letter-spacing:.22em;font-size:14px}
+  .reel-box{position:static;max-width:none;padding:18px 24px 22px}
+  .intro{padding-top:36px;padding-bottom:10px}
+  .intro p{font-size:19px}
+  .grid{grid-template-columns:1fr}
+  .tile.wide{grid-column:auto;aspect-ratio:16/10}
+  .svc{grid-template-columns:1fr}
+  section{padding:64px 0 24px}
+  .head{flex-direction:column;gap:6px}
 }
 </style>
 </head>
@@ -88,67 +126,73 @@ html[lang=en] [data-en]{display:revert}
 </div></header>
 
 <main id="top">
-<div class="reel" aria-hidden="true"><iframe src="https://www.youtube-nocookie.com/embed/eJuVIROvFCQ?autoplay=1&mute=1&loop=1&playlist=eJuVIROvFCQ&controls=0&playsinline=1&rel=0&disablekb=1&iv_load_policy=3" allow="autoplay; encrypted-media" tabindex="-1" title="Showreel"></iframe></div>
-<div class="wrap hero">
-  <div class="eyebrow"><span data-sl>Video · montaža · film · Ljubljana</span><span data-en>Video · editing · film · Ljubljana</span></div>
-  <h1><span data-sl>Zgodbe, posnete<br>in zmontirane z občutkom.</span><span data-en>Stories, shot<br>and cut with care.</span></h1>
-  <p class="lead"><span data-sl>Snemam, montiram in ozvočim video za umetnike, kulturne ustanove, podjetja in fotografe — od portreta umetnika do kratkega filma.</span><span data-en>I shoot, edit and score video for artists, cultural institutions, businesses and photographers — from artist portraits to short films.</span></p>
-  <div class="cta">
-    <a class="btn p" href="#contact"><span data-sl>Pošljite povpraševanje</span><span data-en>Get in touch</span></a>
-    <a class="btn s" href="#work"><span data-sl>Poglejte projekte</span><span data-en>See the work</span></a>
+<div class="reel">
+  <div class="reel-media"><iframe src="https://www.youtube-nocookie.com/embed/eJuVIROvFCQ?autoplay=1&mute=1&loop=1&playlist=eJuVIROvFCQ&controls=0&playsinline=1&rel=0&disablekb=1&iv_load_policy=3" allow="autoplay; encrypted-media" tabindex="-1" aria-hidden="true" title="Showreel"></iframe></div>
+  <div class="reel-box">
+    <span class="label"><span data-sl>Video / montaža / film / Ljubljana</span><span data-en>Video / editing / film / Ljubljana</span></span>
+    <h1 class="cond"><span data-sl>Zgodbe, posnete in zmontirane z občutkom</span><span data-en>Stories, shot and cut with care</span></h1>
+  </div>
+</div>
+
+<div class="wrap intro">
+  <div class="serif"><span data-sl>Arhitekt po izobrazbi, filmar po srcu — kompozicija, svetloba in ritem.</span><span data-en>An architect by training, a filmmaker at heart — composition, light and rhythm.</span></div>
+  <div>
+    <p><span data-sl>Snemam, montiram in ozvočim video za umetnike, kulturne ustanove, podjetja in fotografe — od portreta umetnika do kratkega filma.</span><span data-en>I shoot, edit and score video for artists, cultural institutions, businesses and photographers — from artist portraits to short films.</span></p>
+    <div class="btns">
+      <a class="btn dark" href="#contact"><span data-sl>Pošljite povpraševanje</span><span data-en>Get in touch</span></a>
+      <a class="btn" href="#work"><span data-sl>Projekti</span><span data-en>See the work</span></a>
+    </div>
   </div>
 </div>
 
 <section id="work"><div class="wrap">
-  <h2><span data-sl>Izbrani projekti</span><span data-en>Selected work</span></h2>
-  <p class="sub"><span data-sl>Portreti umetnikov, dokumentarni in turistični filmi, kratki igrani filmi.</span><span data-en>Artist portraits, documentary and travel films, short fiction.</span></p>
+  <div class="head"><h2 class="cond"><span data-sl>Projekti</span><span data-en>Work</span></h2><span class="label"><span data-sl>Izbor 2007–2026</span><span data-en>Selected 2007–2026</span></span></div>
   <div class="grid">
-    <div class="card"><div class="vid" data-id="cUYOiwYadvQ"></div><span class="tag"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3>Alenka Sottler · IBBY 2026</h3><p><span data-sl>Film o ilustratorki Alenki Sottler za IBBY 2026.</span><span data-en>A film on illustrator Alenka Sottler for IBBY 2026.</span></p></div>
-    <div class="card"><div class="vid" data-id="cWoLYw0EfJQ"></div><span class="tag"><span data-sl>Festivalski film</span><span data-en>Festival film</span></span><h3>BIG SEE Festival 2026 · Aftermovie</h3><p><span data-sl>Festival arhitekture in oblikovanja v Portorožu — montaža in originalna glasba.</span><span data-en>Architecture and design festival in Portorož — editing and original music.</span></p></div>
-    <div class="card"><div class="vid" data-id="S5imX1U618c"></div><span class="tag"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3>Studio Tour with Alenka Sottler</h3><p><span data-sl>Sprehod po ateljeju.</span><span data-en>A walk through the artist's studio.</span></p></div>
-    <div class="card"><div class="vid" data-id="T2biNFOkhRQ"></div><span class="tag"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3>Alenka Sottler – Illustrator of the Original Bambi</h3><p><span data-sl>Kratki portret, 1.400+ ogledov.</span><span data-en>Short portrait, 1,400+ views.</span></p></div>
-    <div class="card"><div class="vid" data-id="k13na9H8UmI"></div><span class="tag"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3>Day by Day · 2007</h3><p><span data-sl>1. nagrada FF600 2007 · Motovun 2007 · nominacija za najboljšo montažo, Grand Off Varšava</span><span data-en>1st prize FF600 2007 · Motovun 2007 · nominated for best editing, Grand Off Warsaw</span></p></div>
-    <div class="card"><div class="vid" data-id="pCAexVz2f6I"></div><span class="tag"><span data-sl>Turistični film</span><span data-en>Travel film</span></span><h3>Hidden Treasures of Northern Istria</h3><p><span data-sl>Dokumentarni film o severni Istri.</span><span data-en>A documentary on northern Istria.</span></p></div>
-    <div class="card"><div class="vid" data-id="UkIZuH9oOqo"></div><span class="tag"><span data-sl>Promocijski film</span><span data-en>Promo film</span></span><h3>Istria Healthy Lifestyles</h3><p><span data-sl>Promocijski film za regijo.</span><span data-en>A promotional film for the region.</span></p></div>
-    <div class="card"><div class="vid" data-id="maEDvfX6c0M"></div><span class="tag"><span data-sl>Kulinarični video</span><span data-en>Food video</span></span><h3>Apfel Pastete · 1920</h3><p><span data-sl>Družinski recept, posnet z babico.</span><span data-en>A family recipe, filmed with my grandmother.</span></p></div>
-    <div class="card"><div class="vid" data-id="a1gP6Kw1OWs"></div><span class="tag"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3>Chit Chat</h3><p><span data-sl>Kratki igrani film.</span><span data-en>Short fiction film.</span></p></div>
-    <div class="card"><div class="vid" data-id="6SYSOx91cC8"></div><span class="tag"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3>3 : 1</h3><p><span data-sl>Kratki film.</span><span data-en>Short film.</span></p></div>
+    <div class="tile wide" data-id="cWoLYw0EfJQ"><div class="cap"><span class="label"><span data-sl>Festivalski film / montaža / glasba</span><span data-en>Festival film / editing / music</span></span><h3 class="cond">BIG SEE Festival 2026</h3><p><span data-sl>Festival arhitekture in oblikovanja v Portorožu.</span><span data-en>Architecture and design festival in Portorož.</span></p></div></div>
+    <div class="tile" data-id="cUYOiwYadvQ"><div class="cap"><span class="label"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3 class="cond">Alenka Sottler · IBBY 2026</h3></div></div>
+    <div class="tile" data-id="k13na9H8UmI"><div class="cap"><span class="label"><span data-sl>Kratki film / 1. nagrada FF600</span><span data-en>Short film / 1st prize FF600</span></span><h3 class="cond">Day by Day</h3></div></div>
+    <div class="tile" data-id="S5imX1U618c"><div class="cap"><span class="label"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3 class="cond">Studio Tour · Alenka Sottler</h3></div></div>
+    <div class="tile" data-id="T2biNFOkhRQ"><div class="cap"><span class="label"><span data-sl>Portret umetnice</span><span data-en>Artist portrait</span></span><h3 class="cond">Illustrator of the Original Bambi</h3></div></div>
+    <div class="tile wide" data-id="pCAexVz2f6I"><div class="cap"><span class="label"><span data-sl>Turistični film</span><span data-en>Travel film</span></span><h3 class="cond">Hidden Treasures of Northern Istria</h3></div></div>
+    <div class="tile" data-id="UkIZuH9oOqo"><div class="cap"><span class="label"><span data-sl>Promocijski film</span><span data-en>Promo film</span></span><h3 class="cond">Istria Healthy Lifestyles</h3></div></div>
+    <div class="tile" data-id="maEDvfX6c0M"><div class="cap"><span class="label"><span data-sl>Kulinarični video</span><span data-en>Food video</span></span><h3 class="cond">Apfel Pastete · 1920</h3></div></div>
+    <div class="tile" data-id="a1gP6Kw1OWs"><div class="cap"><span class="label"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3 class="cond">Chit Chat</h3></div></div>
+    <div class="tile" data-id="6SYSOx91cC8"><div class="cap"><span class="label"><span data-sl>Kratki film</span><span data-en>Short film</span></span><h3 class="cond">3 : 1</h3></div></div>
   </div>
 </div></section>
 
 <section id="services"><div class="wrap">
-  <h2><span data-sl>Storitve</span><span data-en>Services</span></h2>
-  <p class="sub"><span data-sl>En človek od ideje do končnega videa — hitro, osebno in brez agencijskih stroškov.</span><span data-en>One person from idea to final cut — quick, personal, without agency overheads.</span></p>
+  <div class="head"><h2 class="cond"><span data-sl>Storitve</span><span data-en>Services</span></h2><span class="label"><span data-sl>Od ideje do končnega videa</span><span data-en>From idea to final cut</span></span></div>
   <div class="svc">
-    <div><h3><span data-sl>Video portreti</span><span data-en>Video portraits</span></h3><p><span data-sl>Umetniki, obrtniki, podjetniki — kdo ste in kaj delate, v 1–3 minutah.</span><span data-en>Artists, makers, founders — who you are and what you do, in 1–3 minutes.</span></p></div>
-    <div><h3><span data-sl>Dogodki in kultura</span><span data-en>Events &amp; culture</span></h3><p><span data-sl>Razstave, festivali, predstavitve — posnetek dogodka in kratek povzetek za splet.</span><span data-en>Exhibitions, festivals, launches — event coverage and a short recap for the web.</span></p></div>
-    <div><h3><span data-sl>Montaža in glasba</span><span data-en>Editing &amp; music</span></h3><p><span data-sl>Montaža vašega materiala, barvna korekcija, zvok in originalna glasba.</span><span data-en>Editing your footage, colour, sound and original music.</span></p></div>
-    <div><h3><span data-sl>Za fotografe</span><span data-en>For photographers</span></h3><p><span data-sl>Video dodatek k vašim fotografijam — poroke, portreti, zakulisje.</span><span data-en>A video add-on to your photo shoots — weddings, portraits, behind the scenes.</span></p></div>
+    <div><span class="num">01</span><h3 class="cond"><span data-sl>Video portreti</span><span data-en>Video portraits</span></h3><p><span data-sl>Umetniki, obrtniki, podjetniki — kdo ste in kaj delate, v 1–3 minutah.</span><span data-en>Artists, makers, founders — who you are and what you do, in 1–3 minutes.</span></p></div>
+    <div><span class="num">02</span><h3 class="cond"><span data-sl>Dogodki in kultura</span><span data-en>Events &amp; culture</span></h3><p><span data-sl>Razstave, festivali, predstavitve — posnetek dogodka in kratek povzetek za splet.</span><span data-en>Exhibitions, festivals, launches — event coverage and a short recap for the web.</span></p></div>
+    <div><span class="num">03</span><h3 class="cond"><span data-sl>Montaža in glasba</span><span data-en>Editing &amp; music</span></h3><p><span data-sl>Montaža vašega materiala, barvna korekcija, zvok in originalna glasba.</span><span data-en>Editing your footage, colour, sound and original music.</span></p></div>
+    <div><span class="num">04</span><h3 class="cond"><span data-sl>Za fotografe</span><span data-en>For photographers</span></h3><p><span data-sl>Video dodatek k vašim fotografijam — poroke, portreti, zakulisje.</span><span data-en>A video add-on to your photo shoots — weddings, portraits, behind the scenes.</span></p></div>
   </div>
 </div></section>
 
-<section id="about"><div class="wrap about">
-  <div>
-    <h2><span data-sl>O meni</span><span data-en>About</span></h2>
-    <p><span data-sl>Sem Igor Matijević, univerzitetni diplomirani arhitekt iz Ljubljane. Arhitektura me je naučila kompozicije in svetlobe; zadnja leta jo uporabljam za kamero.</span><span data-en>I'm Igor Matijević, a graduate architect from Ljubljana. Architecture taught me composition and light; these days I use them behind the camera.</span></p>
-    <p><span data-sl>Delam kot snemalec in montažer, prevajam filme in serije za HBO ter sodelujem pri filmskih produkcijah.</span><span data-en>I work as a camera operator and editor, translate films and series for HBO, and work on film productions.</span></p>
+<section id="about"><div class="wrap">
+  <div class="head"><h2 class="cond"><span data-sl>O meni</span><span data-en>About</span></h2><span class="label">Ljubljana</span></div>
+  <div class="about">
+    <div>
+      <div class="serif"><span data-sl>Arhitektura me je naučila kompozicije in svetlobe; zadnja leta ju uporabljam za kamero.</span><span data-en>Architecture taught me composition and light; these days I use them behind the camera.</span></div>
+      <p><span data-sl>Sem Igor Matijević, univerzitetni diplomirani arhitekt iz Ljubljane. Delam kot snemalec in montažer, prevajam filme in serije za HBO ter sodelujem pri filmskih produkcijah.</span><span data-en>I'm Igor Matijević, a graduate architect from Ljubljana. I work as a camera operator and editor, translate films and series for HBO, and work on film productions.</span></p>
+    </div>
+    <ul>
+      <li><b><span data-sl>Nagrade</span><span data-en>Awards</span></b><span data-sl>Kratki film »Day by Day« (2007): 1. nagrada FF600 Ljubljana; tekmovalni program Motovun, CinéRail Pariz in Tanger; nominacija za montažo Grand Off Varšava</span><span data-en>Short film “Day by Day” (2007): 1st prize FF600 Ljubljana; in competition at Motovun, CinéRail Paris and Tangier; nominated for best editing at Grand Off Warsaw</span></li>
+      <li><b><span data-sl>Nedavno</span><span data-en>Recent</span></b><span data-sl>Film o Alenki Sottler za IBBY 2026 · montaža in originalna glasba za aftermovie festivala BIG SEE 2026</span><span data-en>Film on Alenka Sottler for IBBY 2026 · editing and original music for the BIG SEE Festival 2026 aftermovie</span></li>
+      <li><b>Casting</b><span data-sl>Serija »Korporacija« — več kot 100 statistov</span><span data-en>Series “Korporacija” — over 100 extras</span></li>
+      <li><b><span data-sl>Pred kamero</span><span data-en>On camera</span></b><span data-sl>TV oglasi za Mercator, Mobitel, Lek, Kras, Florette, Alpsko mleko, Vzajemno, Minestro, 3 Sverige, LRF Mjölk, Takko, Bank Austria, RaboDirect in PowerShares QQQ</span><span data-en>TV ads for Mercator, Mobitel, Lek, Kras, Florette, Alpsko mleko, Vzajemna, Minestra, 3 Sverige, LRF Mjölk, Takko, Bank Austria, RaboDirect and PowerShares QQQ</span></li>
+      <li><b><span data-sl>Prevajanje</span><span data-en>Translation</span></b><span data-sl>Podnaslavljanje filmov in serij za HBO · slovenščina, angleščina, hrvaščina, nemščina</span><span data-en>Subtitling films and series for HBO · Slovene, English, Croatian, German</span></li>
+    </ul>
   </div>
-  <ul>
-    <li><span data-sl>Kratki film »Day by Day« (2007): 1. nagrada FF600 Ljubljana; tekmovalni program Motovun, CinéRail Pariz in Tanger; nominacija za montažo Grand Off Varšava</span><span data-en>Short film “Day by Day” (2007): 1st prize FF600 Ljubljana; in competition at Motovun, CinéRail Paris and Tangier; nominated for best editing at Grand Off Warsaw</span></li>
-    <li><span data-sl>Film o Alenki Sottler za IBBY 2026</span><span data-en>Film on Alenka Sottler for IBBY 2026</span></li>
-    <li><span data-sl>Montaža in originalna glasba za aftermovie festivala BIG SEE 2026</span><span data-en>Editing and original music for the BIG SEE Festival 2026 aftermovie</span></li>
-    <li><span data-sl>Casting za serijo »Korporacija« — več kot 100 statistov</span><span data-en>Casting for the series “Korporacija” — over 100 extras</span></li>
-    <li><span data-sl>Podnaslavljanje filmov in serij za HBO</span><span data-en>Subtitling films and series for HBO</span></li>
-    <li><span data-sl>Pred kamero v TV oglasih za Mercator, Mobitel, Lek, Kras, Florette, Alpsko mleko, Vzajemno, Minestro, 3 Sverige, LRF Mjölk, Takko, Bank Austria, RaboDirect in PowerShares QQQ</span><span data-en>On camera in TV ads for Mercator, Mobitel, Lek, Kras, Florette, Alpsko mleko, Vzajemna, Minestra, 3 Sverige, LRF Mjölk, Takko, Bank Austria, RaboDirect and PowerShares QQQ</span></li>
-    <li><span data-sl>Jeziki: slovenščina, angleščina, hrvaščina, nemščina</span><span data-en>Languages: Slovene, English, Croatian, German</span></li>
-  </ul>
 </div></section>
 
 <section id="contact" class="contact"><div class="wrap">
-  <h2><span data-sl>Imate zgodbo?</span><span data-en>Got a story?</span></h2>
-  <p class="sub" style="margin:0 auto 20px"><span data-sl>Pišite ali pokličite — odgovorim v enem dnevu.</span><span data-en>Write or call — I reply within a day.</span></p>
+  <span class="label"><span data-sl>Kontakt</span><span data-en>Contact</span></span>
+  <h2 class="cond"><span data-sl>Imate zgodbo?</span><span data-en>Got a story?</span></h2>
   <a class="big" href="mailto:info@igormatijevic.com">info@igormatijevic.com</a>
-  <a class="big" href="tel:+38641514007">041 514 007</a>
+  <a class="big" href="tel:+38641514007">+386 41 514 007</a>
 </div></section>
 </main>
 
@@ -158,10 +202,15 @@ html[lang=en] [data-en]{display:revert}
 </div></footer>
 
 <script>
-document.querySelectorAll('.vid').forEach(v=>{
-  const id=v.dataset.id;
-  v.innerHTML='<img loading="lazy" alt="" src="https://i.ytimg.com/vi/'+id+'/hqdefault.jpg"><div class="play"><span></span></div>';
-  v.addEventListener('click',()=>{v.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>'},{once:true});
+document.querySelectorAll('.tile').forEach(t=>{
+  const id=t.dataset.id;
+  const img=new Image(); img.alt=''; img.loading='lazy';
+  img.src='https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg';
+  img.onload=()=>{ if(img.naturalWidth<200) img.src='https://i.ytimg.com/vi/'+id+'/hqdefault.jpg'; };
+  img.onerror=()=>{ img.src='https://i.ytimg.com/vi/'+id+'/hqdefault.jpg'; };
+  t.prepend(img);
+  const pl=document.createElement('span'); pl.className='play'; pl.textContent='▶ Play'; t.appendChild(pl);
+  t.addEventListener('click',()=>{t.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>'},{once:true});
 });
 function setLang(l){
   document.documentElement.lang=l;
